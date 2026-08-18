@@ -1,0 +1,23 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: app-ealenn
+#   namespace: platform-infra-apps
+# spec:
+#   project: project-gitops-platform
+
+#   source:
+#     repoURL: https://github.com/publicstaticdevnull/platform-apps.git
+#     targetRevision: main
+#     path: Application/application-ealenn.yml
+
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: prod-app-a
+
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
