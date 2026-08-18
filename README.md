@@ -10,4 +10,5 @@ For example, if a release published as an artifact contained a bug, it could bec
 ### Applications
 List of gitops Apps
 
-* **continous-delivery-argo**: ArgoCD Helm chart setup to deploy continous delivery tool
+* **continous-delivery-argo**: ArgoCD Helm chart setup to deploy continous delivery tool. To add this repo:
+`helm repo add argo https://publicstaticdevnull.github.io/platform-gitops/continous-delivery-argo`

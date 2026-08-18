@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-gitops-platform
+  namespace: argocd
+spec:
+  description: Portfolio applications
+  sourceRepos:
+    - https://github.com/publicstaticdevnull/platform-apps.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: platform-*
+#Able to manage namespaces, and thw whole resources inside of them
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
