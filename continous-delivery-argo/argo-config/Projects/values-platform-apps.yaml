@@ -1,0 +1,19 @@
+projects:
+  production:
+    namespace: argocd
+    description: Production applications
+
+    sourceRepos:
+      - https://github.com/publicstaticdevnull/platform-apps.git
+
+    destinations:
+      - namespace: "platform-*"
+        server: https://kubernetes.default.svc
+
+    clusterResourceWhitelist:
+      - group: ""
+        kind: Namespace
+
+    namespaceResourceWhitelist:
+      - group: "*"
+        kind: "*"

@@ -1,0 +1,18 @@
+# applications:
+#   app-a:
+#     namespace: argocd
+#     project: production
+
+#     source:
+#       repoURL: https://github.com/MI-ORG/gitops.git
+#       targetRevision: main
+#       path: app-a
+
+#     destination:
+#       server: https://kubernetes.default.svc
+#       namespace: prod-app-a
+
+#     syncPolicy:
+#       automated:
+#         prune: true
+#         selfHeal: true
