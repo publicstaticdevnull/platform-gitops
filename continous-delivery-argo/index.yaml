@@ -10,7 +10,7 @@ entries:
         url: https://argoproj.github.io/argo-helm/pgp_keys.asc
     apiVersion: v2
     appVersion: v3.5.0
-    created: "2026-08-11T15:59:42.377689943-03:00"
+    created: "2026-08-18T15:22:24.508646703-03:00"
     dependencies:
     - condition: redis-ha.enabled
       name: redis-ha
@@ -36,4 +36,30 @@ entries:
     urls:
     - argo-cd-10.3.2.tgz
     version: 10.3.2
-generated: "2026-08-11T15:59:42.364111149-03:00"
+  argocd-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Add sourceHydrator field support to Application and ApplicationSet templates
+      artifacthub.io/signKey: |
+        fingerprint: 2B8F22F57260EFA67BE1C5824B11F800CD9D2252
+        url: https://argoproj.github.io/argo-helm/pgp_keys.asc
+    apiVersion: v2
+    created: "2026-08-18T15:22:24.509095805-03:00"
+    description: A Helm chart for managing additional Argo CD Applications and Projects
+    digest: 037b6cb7ad1460302cfc85b9a9dd98d087a2ae7af056081fd065f26377ee60b9
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argocd-apps
+    type: application
+    urls:
+    - argocd-apps-2.0.5.tgz
+    version: 2.0.5
+generated: "2026-08-18T15:22:24.494677163-03:00"
