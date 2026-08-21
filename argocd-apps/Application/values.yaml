@@ -1,0 +1,23 @@
+applications:
+  echo-server:
+    namespace: argocd
+    project: platform-apps
+    sources:
+      - repoURL: https://publicstaticdevnull.github.io/platform-apps/
+        chart: echo-server
+        targetRevision: "*"
+        helm:
+          valueFiles:
+            - $values/echo-server/values.yaml
+
+      - repoURL: https://github.com/publicstaticdevnull/platform-apps.git
+        targetRevision: main
+        ref: values
+
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: platform-apps
+
+    syncPolicy:
+      syncOptions:
+        - CreateNamespace=true

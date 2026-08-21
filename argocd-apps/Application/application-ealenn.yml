@@ -1,0 +1,11 @@
+sources:
+  - repoURL: https://publicstaticdevnull.github.io/platform-apps/
+    chart: ealenn
+    targetRevision: "*"
+    helm:
+      valueFiles:
+        - $values/ealenn/values.yaml
+
+  - repoURL: https://github.com/publicstaticdevnull/platform-apps.git
+    targetRevision: main
+    ref: values

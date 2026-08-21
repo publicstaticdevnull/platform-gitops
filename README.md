@@ -10,4 +10,5 @@ For example, if a release published as an artifact contained a bug, it could bec
 ### Applications
 List of gitops Apps
 
-* **continous-delivery-argo**: ArgoCD Helm chart setup to deploy continous delivery tool
+* **argo-cd**: ArgoCD Helm chart setup to deploy argocd gitops tool
+* **argocd-apps**: ArgoCD Project and applications. The idea is to add new applications here. This repo is managed by DevOps, so no developer can add his own application.

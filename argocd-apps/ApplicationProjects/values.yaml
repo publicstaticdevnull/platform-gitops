@@ -1,9 +1,10 @@
 projects:
-  production:
+  platform-apps:
     namespace: argocd
-    description: Production applications
+    description: Portfolio platform applications
 
     sourceRepos:
+      - https://publicstaticdevnull.github.io/platform-apps/
       - https://github.com/publicstaticdevnull/platform-apps.git
 
     destinations:

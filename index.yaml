@@ -4,13 +4,13 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: added
-          description: Add an optional h2c server service port so Gateway API implementations can select the backend protocol for gRPC traffic when running in insecure mode
+          description: Support specifying a VPA recommender via <component>.vpa.recommenders for all components
       artifacthub.io/signKey: |
         fingerprint: 2B8F22F57260EFA67BE1C5824B11F800CD9D2252
         url: https://argoproj.github.io/argo-helm/pgp_keys.asc
     apiVersion: v2
-    appVersion: v3.5.0
-    created: "2026-08-18T15:22:24.508646703-03:00"
+    appVersion: v3.5.1
+    created: "2026-08-21T11:24:30.726971226-03:00"
     dependencies:
     - condition: redis-ha.enabled
       name: redis-ha
@@ -18,7 +18,7 @@ entries:
       version: 4.38.0
     description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
       tool for Kubernetes.
-    digest: 33fc29ad7e0e1b2116e9d2ba4079e18619efde844f9a7cd3dbe74bfc7b9bc4c2
+    digest: 5abb71c17bc082e13dc3d90023972f871ea8e1dfc26d8f3218ceade215b971d5
     home: https://github.com/argoproj/argo-helm
     icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
     keywords:
@@ -34,8 +34,8 @@ entries:
     - https://github.com/argoproj/argo-cd
     - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
     urls:
-    - argo-cd-10.3.2.tgz
-    version: 10.3.2
+    - argo-cd-10.4.0.tgz
+    version: 10.4.0
   argocd-apps:
   - annotations:
       artifacthub.io/changes: |
@@ -45,7 +45,7 @@ entries:
         fingerprint: 2B8F22F57260EFA67BE1C5824B11F800CD9D2252
         url: https://argoproj.github.io/argo-helm/pgp_keys.asc
     apiVersion: v2
-    created: "2026-08-18T15:22:24.509095805-03:00"
+    created: "2026-08-21T11:24:30.727374362-03:00"
     description: A Helm chart for managing additional Argo CD Applications and Projects
     digest: 037b6cb7ad1460302cfc85b9a9dd98d087a2ae7af056081fd065f26377ee60b9
     home: https://github.com/argoproj/argo-helm
@@ -62,4 +62,4 @@ entries:
     urls:
     - argocd-apps-2.0.5.tgz
     version: 2.0.5
-generated: "2026-08-18T15:22:24.494677163-03:00"
+generated: "2026-08-21T11:24:30.708234955-03:00"
