@@ -24,7 +24,7 @@ helm upgrade argocd-app-projects platform-gitops/argocd-apps -f ApplicationProje
 
 
 ## Install Argo applications
-Install the platform apps apllications using helm
+Install the platform apps applications using helm
 
 ```bash
 helm repo add argo-official https://argoproj.github.io/argo-helm ; helm repo update argo-official 
@@ -34,6 +34,13 @@ helm repo index ../                         # Update index
 Now, commit and merge. You must do this, else, you won't be able to add this repo as a helm chart repo. Wait a couple of minutes till Github Refresh. 
 ```bash
 helm repo add platform-gitops https://publicstaticdevnull.github.io/platform-gitops ; helm repo update platform-gitops # Install and update.
-helm search repo platform-gitops # look for argo-official/argocd-apps Chart
+helm search repo platform-gitops # look for platform-gitops/argocd-apps Chart
 helm install argocd-app-apps platform-gitops/argocd-apps -f Application/values.yaml --create-namespace=true --namespace=argocd
+```
+
+## Install / update Application
+Add it to the `values.yaml` file under `Application` folder
+Install it:
+```bash
+helm upgrade argocd-app-apps platform-gitops/argocd-apps -f Application/values.yaml --namespace=argocd                                                               
 ```

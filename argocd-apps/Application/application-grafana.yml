@@ -1,0 +1,11 @@
+sources:
+  - repoURL: https://publicstaticdevnull.github.io/platform-observability/
+    chart: grafana
+    targetRevision: "*"
+    helm:
+      valueFiles:
+        - $values/grafana/values.yaml
+
+  - repoURL: https://github.com/publicstaticdevnull/platform-observability.git
+    targetRevision: main
+    ref: values
