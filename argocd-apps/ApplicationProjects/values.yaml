@@ -1,11 +1,13 @@
 projects:
   platform-apps:
     namespace: argocd
-    description: Portfolio platform applications
+    description: Enduser applications
 
     sourceRepos:
       - https://publicstaticdevnull.github.io/platform-apps/
       - https://github.com/publicstaticdevnull/platform-apps.git
+      - https://publicstaticdevnull.github.io/platform-observability/
+      - https://github.com/publicstaticdevnull/platform-observability.git
 
     destinations:
       - namespace: "platform-*"
@@ -14,6 +16,31 @@ projects:
     clusterResourceWhitelist:
       - group: ""
         kind: Namespace
+
+    namespaceResourceWhitelist:
+      - group: "*"
+        kind: "*"
+  platform-observability:
+    namespace: argocd
+    description: Monitoring applications
+
+    sourceRepos:
+      - https://publicstaticdevnull.github.io/platform-observability/
+      - https://github.com/publicstaticdevnull/platform-observability.git
+
+    destinations:
+      - namespace: "monitoring"
+        server: https://kubernetes.default.svc
+
+    clusterResourceWhitelist:
+      - group: ""
+        kind: Namespace
+      - group: ""
+        kind: Namespace
+      - group: rbac.authorization.k8s.io
+        kind: ClusterRole
+      - group: rbac.authorization.k8s.io
+        kind: ClusterRoleBinding
 
     namespaceResourceWhitelist:
       - group: "*"

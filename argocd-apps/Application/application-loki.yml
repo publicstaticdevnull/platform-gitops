@@ -1,0 +1,11 @@
+sources:
+  - repoURL: https://publicstaticdevnull.github.io/platform-observability/
+    chart: loki
+    targetRevision: "*"
+    helm:
+      valueFiles:
+        - $values/loki/values.yaml
+
+  - repoURL: https://github.com/publicstaticdevnull/platform-observability.git
+    targetRevision: pre-prod
+    ref: values

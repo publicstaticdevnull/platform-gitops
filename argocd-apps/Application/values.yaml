@@ -21,3 +21,46 @@ applications:
     syncPolicy:
       syncOptions:
         - CreateNamespace=true
+  grafana:
+    namespace: argocd
+    project: platform-observability
+    sources:
+      - repoURL: https://publicstaticdevnull.github.io/platform-observability/
+        chart: grafana
+        targetRevision: "*"
+        helm:
+          valueFiles:
+            - $values/grafana/values.yaml
+
+      - repoURL: https://github.com/publicstaticdevnull/platform-observability.git
+        targetRevision: main
+        ref: values
+
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: monitoring
+
+    syncPolicy:
+      syncOptions:
+        - CreateNamespace=true
+  loki:
+    namespace: argocd
+    project: platform-observability
+    sources:
+      - repoURL: https://publicstaticdevnull.github.io/platform-observability/
+        chart: loki
+        targetRevision: "*"
+        helm:
+          valueFiles:
+            - $values/loki/values.yaml
+      - repoURL: https://github.com/publicstaticdevnull/platform-observability.git
+        targetRevision: pre-prod
+        ref: values
+
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: monitoring
+
+    syncPolicy:
+      syncOptions:
+        - CreateNamespace=true
