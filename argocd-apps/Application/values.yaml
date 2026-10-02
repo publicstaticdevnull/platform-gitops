@@ -64,3 +64,25 @@ applications:
     syncPolicy:
       syncOptions:
         - CreateNamespace=true
+  postgres:
+    namespace: argocd
+    project: platform-apps
+    sources:
+      - repoURL: https://publicstaticdevnull.github.io/platform-apps/
+        chart: postgresql
+        targetRevision: "*"
+        helm:
+          valueFiles:
+            - $values/postgres/values.yaml
+
+      - repoURL: https://github.com/publicstaticdevnull/platform-apps.git
+        targetRevision: main
+        ref: values
+
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: platform-apps
+
+    syncPolicy:
+      syncOptions:
+        - CreateNamespace=true
